@@ -1,0 +1,70 @@
+**Google Cloud Fundamentals: Getting Started with App Engine**
+
+**Objectives:**
+
+- Initialize App Engine.
+- Preview an App Engine application running locally in Cloud Shell.
+- Deploy an App Engine application, so that others can reach it.
+- Disable an App Engine application, when you no longer want it to be visible.
+
+**Steps:**
+
+**To initialize App Engine:**
+
+Initialize App Engine app with a project and choose its region on cloud shell:
+
+_gcloud app create --project=$DEVSHELL\_PROJECT\_ID --region=us-central_
+
+Clone the source code repository for a sample application in the hello\_world directory:
+
+_git clone https://github.com/GoogleCloudPlatform/python-docs-samples_
+
+Navigate to the source directory:
+
+_cd python-docs-samples/appengine/standard\_python3/hello\_world_
+
+Run Hello World application locally:
+
+Download and update the packages list:
+
+_sudo apt-get update_
+
+Set up a python virtual environment in which the application will run:
+
+_sudo apt-get install virtualenv -y_
+
+_virtualenv -p python3 venv_
+
+Activate the virtual environment
+
+_source venv/bin/activate_
+
+Navigate to the project directory and install dependencies
+
+_pip install -r requirements.txt_
+
+To run the application:
+
+_python main.py_
+
+**To deploy and run Hello World on App Engine** :
+
+Navigate to the source directory:
+
+_cd ~/python-docs-samples/appengine/standard\_python3/hello\_world_
+
+Deploy your Hello World application:
+
+_gcloud app deploy_
+
+If prompted enter y
+
+**To launch your browser to view the app** :
+
+_gcloud app browse_
+
+To disable the application:
+
+_gcloud app versions stop 20200910t100451_
+
+Note: Auto-scaling has to be disabled
